@@ -1,25 +1,25 @@
 .App {
   text-align: center;
-  background-color: #b2a3d8; /* Mauve */
-  padding: 40px;
-  min-height: 100vh;
+  background-color: #9b4dca; /* Couleur mauve */
+  color: white;
+  padding: 20px;
 }
 
 h1 {
-  color: #fff;
+  font-size: 2rem;
+  margin-top: 20px;
 }
 
 button {
-  background-color: #6a4c9c;
-  color: white;
+  background-color: #ffb74d; /* Couleur bouton */
   border: none;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   border-radius: 5px;
 }
 
-button:disabled {
-  background-color: #d3c9e5;
+button:hover {
+  background-color: #ff9800;
 }
