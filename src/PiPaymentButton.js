@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const PiPaymentButton = () => {
-  const [isLoading, setIsLoading] = useState(false);
-
+function PiPaymentButton() {
   const handlePayment = async () => {
-    setIsLoading(true);
-
     try {
       const payment = await window.Pi.createPayment({
         amount: 0.001,
-        memo: 'Paiement test Pi',
-        metadata: { type: 'test-payment' }
+        memo: "Paiement test Pi",
+        metadata: { type: "test-payment" },
       });
 
-      console.log('Payment object reçu :', payment);
+      console.log("Payment object reçu :", payment);
 
       if (!payment.identifier) {
         alert('Erreur : Payment identifier non trouvé.');
@@ -23,11 +19,11 @@ const PiPaymentButton = () => {
       const res = await fetch('/api/verify-payment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ paymentId: payment.identifier })
+        body: JSON.stringify({ paymentId: payment.identifier }),
       });
 
       const result = await res.json();
-      console.log('Réponse serveur :', result);
+      console.log("Réponse serveur :", result);
 
       if (res.ok) {
         alert('Paiement validé !');
@@ -37,16 +33,10 @@ const PiPaymentButton = () => {
     } catch (error) {
       console.error('Erreur durant le paiement:', error);
       alert('Erreur pendant le paiement : ' + (error?.message || error));
-    } finally {
-      setIsLoading(false);
     }
   };
 
-  return (
-    <button onClick={handlePayment} disabled={isLoading}>
-      {isLoading ? 'Chargement...' : 'Payer 0.001 Pi (test)'}
-    </button>
-  );
-};
+  return <button onClick={handlePayment}>Payer 0.001 Pi</button>;
+}
 
 export default PiPaymentButton;
