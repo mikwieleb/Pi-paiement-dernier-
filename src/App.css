@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  background-color: #b2a3d8; /* Mauve */
+  padding: 40px;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #fff;
+}
+
+button {
+  background-color: #6a4c9c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+button:disabled {
+  background-color: #d3c9e5;
+}
