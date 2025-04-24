@@ -1,13 +1,11 @@
-import React from 'react';
-import PiPaymentButton from './PiPaymentButton';
-import './App.css';
+// src/App.js
+import React from "react";
 
 function App() {
   return (
-    <div className="App">
-      <img src="/favicon.ico" alt="Logo Pi" width="100" />
-      <h1>Bienvenue sur l'app Pi Test</h1>
-      <PiPaymentButton />
+    <div style={{ padding: "2rem", textAlign: "center", color: "#6a0dad" }}>
+      <h1>Bienvenue sur l'appli Pi</h1>
+      <p>Tout fonctionne bien côté React !</p>
     </div>
   );
 }
